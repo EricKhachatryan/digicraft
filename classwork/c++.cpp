@@ -75,7 +75,7 @@ std::cout << "year: " << car2.year << std::endl;
 std::cout << "color: " << car2.color << std::endl;
 return 0;
 }
-*/
+
 
 #include <iostream>
 #include <string>
@@ -149,7 +149,57 @@ std::cout << "surname: " << student6.surname <<std::endl;
 
 return 0;
 }
+*/
 
+
+#include <iostream>
+#include <string>
+
+struct student {
+std::string name;
+std::string surname;
+};
+struct xumb {
+	std::string name;
+	student student1;
+	student student2;
+	student student3;
+	student student4;
+	student student5;
+};
+struct bajin {
+	std::string name;
+	xumb vmsh105b;
+};
+struct ambion {
+	std::string name;
+	bajin mexanik;
+};
+
+struct hamalsaran {
+	std::string name;
+	std::string city;
+ambion mexanika;
+};
+
+int main(){
+student1.name = "Tigran";
+student1.surname = "Axababyan";
+student2.name = "Ernani";
+student2.surname = "Araqelyan";
+student3.name = "Eric";
+student3.surname = "Khachatryan";
+student4.name = "Arthur";
+student4.surname = "Pogosyan";
+student5.name = "Sarqis";
+student5.surname = "Galechyan";
+vmsh105b.name = "vmsh105b"; 
+mexanik.name = "mexanik";
+mexanika.name = "mexanikakan";
+hamalsaran.name = "NPUA";
+hamalsaran.city = "Vanadzor";
+return 0;
+}
 
 
 
