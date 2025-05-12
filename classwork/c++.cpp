@@ -149,7 +149,7 @@ std::cout << "surname: " << student6.surname <<std::endl;
 
 return 0;
 }
-*/
+
 
 
 #include <iostream>
@@ -202,10 +202,70 @@ return 0;
 }
 
 
+#include <iostream>
+#include <string>
+
+struct student {
+	std::string name;
+	int grade;
+};
+
+int main(){
+student st;
+std::cout << "Input student name" << std::endl;
+std::cin >> st.name;
+std::cout << "Input student grade" << std::endl;
+std::cin >> st.grade;
+if( st.grade < 0 ){
+	std::cout << "grade negative" << std::endl;
+	return 1;
+    	}
+if( st.grade <= 40 && st.grade >= 0){
+	std::cout << "name = " << st.name << "\ngrade = D" << std::endl;
+}else if( st.grade <= 60 && st.grade > 40 ) {
+std::cout << "name = " << st.name << "\ngrade = C" << std::endl;
+}else if( st.grade <= 80 && st.grade > 60 ) {
+std::cout << "name = " << st.name << "\ngrade = B" << std::endl;
+}else{
+std::cout << "name = " << st.name << "\ngrade = A" << std::endl;
+}
+return 0;
+}
 
 
+#include <iostream>
+#include <string>
+struct employee{
+	std::string name;
+	int salary;
+	int experience;
+};
+int main (){
+	float sum = 0;
+	employee emp;
+	std::cout << "Input name" << std::endl;
+	std::cin >> emp.name;
+	std::cout << "Input salary" << std::endl;
+	std::cin >> emp.salary;
+	std::cout << "Input experience" << std::endl;
+	std::cin >> emp.experience;
+if ( emp.salary < 0 || emp.experience < 0){
+	std::cout << "salary or experience negative" << std::endl;
+return 1;
+}
+	if(emp.experience <= 2){
+	 sum = emp.salary * 5 / 100;
+	std::cout << "name = " << emp.name << "\nsum = " << sum << std::endl;
+	}else if(emp.experience > 2 && emp.experience <= 5 ){
+	sum = emp.salary * 10 / 100;
+	std::cout << "name = " << emp.name << "\nsum = " << sum << std::endl;
+	}else
+	sum = emp.salary * 15 / 100;
+	std::cout << "name = " << emp.name << "\nsum = " << sum << std::endl;
+	return 0;
+}
 
-
+*/
 
 
 
