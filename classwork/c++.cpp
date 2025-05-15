@@ -265,7 +265,151 @@ return 1;
 	return 0;
 }
 
+#include <iostream>
+#include <string>
+int main (){
+	std::cout << "input number" << std::endl;
+	std::cin >> num;
+	int num = 0;
+switch (num){
+	case 1:
+		std::cout << "Hashvapahutyun" << std::endl;
+		break;
+	case 2:
+		std::cout << "Vacharq" << std::endl;
+		break;
+	case 3:
+		std::cout << "Tnoren" << std::endl;
+		break;
+	case 4:
+		std::cout << "Hr" << std::endl;
+		break;
+	case 5:
+		std::cout << "Srah" << std::endl;
+		break;
+	case 6:
+		std::cout << "Araqum" << std::endl;
+		break;
+	case 7:
+		std::cout << "Operator" << std::endl;
+		break;
+	case Default :		
+		std::cout << "Default" << std::endl;
+		break;
+
+}	
+return 0;
+}
+
+
+
+
+#include <iostream>
+#include <string>
+enum office{
+HASHVAPAHUTYUN,
+VACHARQ,
+TNOREN,
+HR,
+SRAH,
+ARAQUM,
+OPERATOR,
+DEFAULT
+};
+
+int main(){
+	enum office off = OPERATOR;
+switch (off){
+
+	case HASHVAPAHUTYUN :
+		std::cout << "Hashvapahutyun" << std::endl;
+		break;
+	case VACHARQ :
+		std::cout << "Vacharq" << std::endl;
+		break;
+	case TNOREN  :
+		std::cout << "Tnoren" << std::endl;
+		break;
+	case HR :
+		std::cout << "Hr" << std::endl;
+		break;
+	case SRAH :
+		std::cout << "Srah" << std::endl;
+		break;
+	case ARAQUM  :
+		std::cout << "Araqum" << std::endl;
+		break;
+	case OPERATOR :
+		std::cout << "Operator" << std::endl;
+		break;
+	case DEFAULT :		
+		std::cout << "Default" << std::endl;
+		break;
+}
+	return 0;
+}
 */
+
+include <iostream>
+include <string>
+enum bc{
+PLUS,
+MINUS,
+BAZMAPATKUM,
+BAJANUM,
+DEFAULT
+};
+int main(){
+
+int num1 = 0;
+int num2 = 0;
+char operator;
+
+
+std::cout << "input number 1" << std::endl;
+		std::cin >> num1;
+std::cout << "input operator" << std::endl;
+		std::cin >> operator;
+std::cout << "input number 2" << std::endl;
+		std::cin >> num2;
+if()	
+
+switch(calculator){	
+
+	case PLUS :
+		std::cout << "Srah" << std::endl;
+		break;
+	case MINUS :
+		std::cout << "Srah" << std::endl;
+		break;
+	case BAZMAPATKUM :
+		std::cout << "Araqum" << std::endl;
+		break;
+	case BAJANUM :
+		std::cout << "Operator" << std::endl;
+		break;
+	case DEFAULT :		
+		std::cout << "Default" << std::endl;
+		break;
+}
+
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
