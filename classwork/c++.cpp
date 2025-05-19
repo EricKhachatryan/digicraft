@@ -1,4 +1,5 @@
-/*#include <iostream>
+/*
+#include <iostream>
 int main () { 
 long int a = 1111111111111111111;
 short int b = a;
@@ -348,7 +349,6 @@ switch (off){
 }
 	return 0;
 }
-*/
 
 include <iostream>
 include <string>
@@ -398,8 +398,61 @@ return 0;
 
 
 
+#include <iostream>
+#include <string>
+
+int main() {
+for(int i = 0; i < 10 ; i++){
+	std::cout << i << std:endl;
+}
 
 
+
+int i = 0;
+while (i < 10) {
+	std::cout << i << std:endl;
+i++;
+}
+
+int i = 0; 
+do{
+	std::cout << i << std:endl;
+i++;
+}while(i < 10);
+
+return 0;
+}
+
+*/
+
+
+#include <iostream>
+#include <string>
+
+int main (){
+    for (int i = 0; i < 3 ; i++){
+	std::string login = "";
+    std::string password = "";
+		std::cout << "input login" << std::endl;
+		std::cin >> login ;  
+		std::cout << "input password" << std::endl;
+		std::cin >> password ;
+	      if(login == "eric"){ 
+		std::cout << "input password" << std::endl;
+		std::cin >> password ;
+		      if(password == "123"){
+		std::cout << "login successfuly" << std::endl;
+		      break;
+		      }
+		      else 
+		std::cout << "password false" << std::endl;
+
+	      } 
+	      else 	      
+		std::cout << "login false" << std::endl;
+}
+	return 0;
+}
 
 
 
