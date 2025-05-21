@@ -423,7 +423,6 @@ i++;
 return 0;
 }
 
-*/
 
 
 #include <iostream>
@@ -453,7 +452,65 @@ int main (){
 }
 	return 0;
 }
+*/
 
+#include <iostream>
+#include <string>
+
+enum eQuiz { MATH, ENGL, PROG }; 
+
+int main(){
+std::string math = "";
+std::string engl = "";
+std::string prog = "";
+std::string amath = "2";
+std::string aengl = "lenguage";
+std::string aprog = "c++";
+int sum = 0;
+int iQuiz = 0;
+for(iQuiz = 0; iQuiz < 3 ;iQuiz++ ){
+	eQuiz quiz = static_cast<eQuiz>(iQuiz);
+	
+	switch( iQuiz ){
+		case MATH:
+	std::cout << "math question" << std::endl;
+	std::cout << "1 + 1 = ";
+	std::cin >> math;
+	if(math == amath){
+		sum++;
+	continue;
+	}else
+		continue;
+
+		case ENGL:
+	std::cout << "engl question" << std::endl;
+	std::cout << "engl = ";
+	std::cin >> engl;
+	if(engl == aengl){
+		sum++;
+	continue;
+	}else
+		continue;
+		case PROG:
+	std::cout << "prog question" << std::endl;
+	std::cout << "program leng = ";
+	std::cin >> prog;
+	if(prog == aprog){
+		sum++;
+	continue;
+	}else
+		continue;
+
+}
+
+}
+
+	std::cout << sum << "/3" << std::endl;
+
+
+
+return 0;
+}
 
 
 
