@@ -452,7 +452,6 @@ int main (){
 }
 	return 0;
 }
-*/
 
 #include <iostream>
 #include <string>
@@ -512,13 +511,45 @@ for(iQuiz = 0; iQuiz < 3 ;iQuiz++ ){
 return 0;
 }
 
+#include <iostream>
+#include <string>
+
+int sum(  ){
+int i = 1;
+int num = 0;
+for( i; i <= 10 ; i++){
+num = num + i;
+num += i;
+}
+	return num;
+}
+
+int main( ) {
+	std::cout << sum() << std::endl;
+	return 0;
+}
 
 
+#include <iostream>
+#include <string>
 
+int personinfo( ){
+	std::string name = "";
+	std::string surname = "";
+	int age = 0;
+	std::cin >> name;
+	std::cin >> surname;
+	std::cin >> age;
+	std::cout << name << surname << age << std::endl;
+return 0;
+}
+ 
+int main(){
+personinfo();
+	return 0;
+}
 
-
-
-
+*/
 
 
 
