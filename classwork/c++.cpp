@@ -549,10 +549,43 @@ personinfo();
 	return 0;
 }
 
+
+#include <iostream>
+#include <string>
+
+struct student {
+	std::string name = "";
+	int mark = 0;
+};
+
+bool isPussed( int num ){
+bool bNum = false;
+	if (num >= 51){
+	bNum = true;
+		return bNum;
+}
+else {
+	return bNum;
+}
+}
+
+
+int main( )
+{
+student st;
+std::cin >> st.name;
+std::cin >> st.mark;
+bool answer = isPussed(st.mark);
+if( answer == true ){
+std::cout << st.name << " pussed " << std::endl;
+}
+else{
+std::cout << st.name << " failed " << std::endl;
+
+}
+	return 0;
+}
 */
-
-
-
 
 
 
