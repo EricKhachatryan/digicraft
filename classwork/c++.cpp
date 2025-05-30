@@ -585,10 +585,61 @@ std::cout << st.name << " failed " << std::endl;
 }
 	return 0;
 }
+
+#include <iostream>
+#include <string>
+
+int add( int a , int b ){
+return a + b;
+}
+float add( float a , float b ) {
+return a + b;
+}
+double add( double a , double b ) {
+return a + b;
+}
+
+int main( ) {
+std::cout << add( 7 , 7 ) << std::endl;
+std::cout << add( 2.5f , 5.5f ) << std::endl;
+std::cout << add( 2.684695654d , 2.656516561d ) << std::endl;
+	return 0;
+}
 */
 
+#include <iostream>
+#include <string>
+
+struct Student {
+std:string name = "";
+int grade = 0;
+};
+
+struct Employee {
+std::string name = "";
+double salory = 0 ;
+};
+i
+int printinfo(Student stud){
+	std::cout << stud
+}
+double printinfo(Employee emp);
+
+int main( ){ 
+Student stud
+	stud.name = "Eric";
+	stud.grade = 50;
+Employee emp;
+	emp.name = "Eric";
+	emp.salory = 150000;
 
 
+}
+
+
+
+return 0;
+}
 
 
 
