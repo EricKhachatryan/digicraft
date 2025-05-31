@@ -611,35 +611,43 @@ std::cout << add( 2.684695654d , 2.656516561d ) << std::endl;
 #include <string>
 
 struct Student {
-std:string name = "";
-int grade = 0;
+	std::string name;
+	int grade;
 };
 
 struct Employee {
-std::string name = "";
-double salory = 0 ;
+	std::string name;
+	int salory;
 };
-i
-int printinfo(Student stud){
-	std::cout << stud
-}
-double printinfo(Employee emp);
+
+void printinfo(Student);
+void printinfo(Employee);
 
 int main( ){ 
-Student stud
-	stud.name = "Eric";
-	stud.grade = 50;
+
+Student st;
+	st.name = "Eric";
+	st.grade = 50;
+
 Employee emp;
 	emp.name = "Eric";
 	emp.salory = 150000;
 
-
-}
-
-
+printinfo(st);
+printinfo(emp);
 
 return 0;
 }
+
+void printinfo(Student st) {
+	std::cout << "Student Name = " << st.name << "\nStudent Grade = " << st.grade << std::endl;
+} 
+
+void printinfo(Employee emp) {
+	std::cout << "Employee Name = " << emp.name << "\nEmployee Grade = " << emp.salory << std::endl;
+}
+
+
 
 
 
