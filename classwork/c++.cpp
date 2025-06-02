@@ -605,7 +605,7 @@ std::cout << add( 2.5f , 5.5f ) << std::endl;
 std::cout << add( 2.684695654d , 2.656516561d ) << std::endl;
 	return 0;
 }
-*/
+
 
 #include <iostream>
 #include <string>
@@ -646,6 +646,65 @@ void printinfo(Student st) {
 void printinfo(Employee emp) {
 	std::cout << "Employee Name = " << emp.name << "\nEmployee Grade = " << emp.salory << std::endl;
 }
+
+
+#include <iostream>
+#include <string>
+
+int fact(int);
+
+int main (){
+int num = 0;
+std::cin >> num;
+if ( num >= 0 ){
+	std::cout << fact(num) << std::endl;
+}
+	return 0;
+}
+
+int fact(int num){
+if (  num == 1 )
+{
+	return 1;
+}
+
+return num * fact(num -1);
+}
+
+#include <iostream>
+#include <string>
+
+int fib(int);
+
+int main (){
+int num = 0;
+std::cin >> num;
+if ( num > 0 ){
+	std::cout << fib(num) << std::endl;
+}
+	return 0;
+}
+
+int fib(int num){
+if( num == 1 || num == 2 ) {
+return 1;
+}
+return fib( num - 1 ) + fib( num - 2 );
+}
+
+*/
+#include <iostream>
+#include <string>
+
+
+
+
+int main(){
+return 0;
+}
+
+
+
 
 
 
