@@ -696,14 +696,24 @@ return fib( num - 1 ) + fib( num - 2 );
 #include <iostream>
 #include <string>
 
-
-
+int sum(int);
 
 int main(){
-return 0;
+	int num = 0;
+	std::cout << "Input Number = ";
+	std::cin >> num;
+	if(num >= 0){
+		std::cout << sum(num) << std::endl;
+       	}
+	return 0;
 }
 
-
+int sum(int n){
+	if( n > 0 ){
+		return ( n % 10) + sum( n / 10 );
+	}else
+return 0;
+}
 
 
 
