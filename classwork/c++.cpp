@@ -692,7 +692,6 @@ return 1;
 return fib( num - 1 ) + fib( num - 2 );
 }
 
-*/
 #include <iostream>
 #include <string>
 
@@ -710,12 +709,24 @@ int main(){
 
 int sum(int n){
 	if( n > 0 ){
+		std::cout << "aa" << std::endl;
 		return ( n % 10) + sum( n / 10 );
 	}else
 return 0;
 }
 
+*/
 
+#include <iostream>
+#include <string>
+
+int main(){
+int* p = nullptr;
+	std::cout << *p << std::endl;
+
+
+	return 0;
+}
 
 
 
