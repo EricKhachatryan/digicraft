@@ -715,7 +715,6 @@ int sum(int n){
 return 0;
 }
 
-*/
 
 #include <iostream>
 #include <string>
@@ -728,11 +727,43 @@ int* p = nullptr;
 	return 0;
 }
 
+#include <iostream>
+#include <string>
+
+int main(){
+int a = 5;
+int& r = a;
+std::cout << r << &r << &a << std::endl;
+	
+	return 0;
+}
+
+*/
 
 
+#include <iostream>
+#include <string>
 
+ struct student{
+	std::string* name = nullptr;
+	int* grade = nullptr;	
+};
 
-
-
-
-
+int main(){
+	student* mystruct = new student();
+	mystruct->name = new std::string ("Eric");
+	mystruct->grade = new int(50);
+	std::cout << *(mystruct->name) << *(mystruct->grade) << std::endl;
+delete mystruct->name;	
+delete mystruct->grade;	
+delete mystruct;	
+	
+	
+	
+	int a = 5;
+	int& r = a;
+	r = 10;
+	std::cout << r << std::endl;
+	
+	return 0;
+}
