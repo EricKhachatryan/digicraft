@@ -738,7 +738,6 @@ std::cout << r << &r << &a << std::endl;
 	return 0;
 }
 
-*/
 
 
 #include <iostream>
@@ -767,3 +766,55 @@ delete mystruct;
 	
 	return 0;
 }
+
+*/
+
+
+#include <iostream>
+#include <string>
+
+int main(){
+int arr[3][3] = {
+	{1,2,3},
+	{4,5,6},
+	{7,8,9},
+		};
+for(int i = 0; i < 3;++i){
+	for(int j = 0 ; j < 3 ;++j){
+		std::cout << ((arr + i)+j) << std::endl;	
+}
+}
+
+int arr1[10] ={0,1,2,3,4,5,6,7,8,9};
+for(int i = 0; i < 10 ;++i){ 
+		std::cout << *(arr1 + i)  << std::endl;	
+}
+int size = sizeof(arr1) / sizeof(arr1[0]);
+		std::cout << size  << std::endl;	
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
