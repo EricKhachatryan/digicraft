@@ -767,7 +767,6 @@ delete mystruct;
 	return 0;
 }
 
-*/
 
 
 #include <iostream>
@@ -781,7 +780,7 @@ int arr[3][3] = {
 		};
 for(int i = 0; i < 3;++i){
 	for(int j = 0 ; j < 3 ;++j){
-		std::cout << ((arr + i)+j) << std::endl;	
+		std::cout << *(*(arr + i)+j) << std::endl;	
 }
 }
 
@@ -795,13 +794,43 @@ return 0;
 }
 
 
+#include <iostream>
+#include <string>
 
+int main(){
 
+int* arr = new int[5];	
+for(int i = 0 ; i < 5;++i){
+	std::cin >> *(arr + i);
+}
+	
+for(int i = 0 ; i < 5;++i){
+	std::cout << *(arr + i) << std::endl;
+}
 
+	return 0;
+}
 
+*/
 
+#include <iostream>
+#include <string>
 
+void dArr( int row , int column );
 
+int main(){
+
+	dArr( 3 , 3 );
+	
+	return 0;
+}
+
+void dArr( int row , int column ){
+int** arr = new int* [row];
+for(int i = 0 ; i < row ; ++i){
+arr[i] = new int [column];
+}
+}; 
 
 
 
