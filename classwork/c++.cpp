@@ -811,7 +811,6 @@ for(int i = 0 ; i < 5;++i){
 	return 0;
 }
 
-*/
 
 #include <iostream>
 #include <string>
@@ -833,9 +832,64 @@ arr[i] = new int [column];
 }; 
 
 
+*/
+
+#include <iostream>
+#include <string>
+
+class Student {
+	public:
+		void setName(std::string name);	
+		std::string getName();	
+	
+		void setSurname(std::string surname);	
+		std::string getSurname();
+	
+		void setAge(int age);	
+		int getAge();
+void print(){
+	std::cout << getName() << std::endl;
+	std::cout << getSurname() << std::endl;
+	std::cout << getAge() << std::endl;
+}
+	private:
+		std::string m_name;
+		std::string m_surname;	
+		int m_age;
+
+};
+
+void Student::setName(std::string name){
+	m_name = name;
+}
+std::string Student::getName(){
+	return m_name;
+}
+
+void Student::setSurname(std::string surname){
+	m_surname = surname;
+}
+std::string Student::getSurname(){
+	return m_surname;
+}
+void Student::setAge(int age){
+	m_age = age;
+}
+int Student::getAge(){
+	return m_age;
+}
 
 
 
+int main(){
+	Student st;
+	st.setName("Eric");
+	st.setSurname("Khachatryan");
+	st.setAge(23);
+	std::cout << "Student Info:" << std::endl;
+	st.print();
+	return 0; 
+}
 
 
 
