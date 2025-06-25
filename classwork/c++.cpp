@@ -832,7 +832,6 @@ arr[i] = new int [column];
 }; 
 
 
-*/
 
 #include <iostream>
 #include <string>
@@ -892,9 +891,113 @@ int main(){
 }
 
 
+*/
+
+#include <iostream>
+#include <string>
+
+class Person {
+	public:
+		Person(){
+			std::string name = "";
+			int age = 0;
+		}
+		Person(std::string name , int age){
+			this->name = name;
+			this->age = age;
+		}
+		~Person(){
+		
+		}
+	public:
+		void setName(std::string name){this->name = name;}
+		void setAge(int age){this->age = age;}
+		std::string getName(){return this->name;}
+		int getAge(){return this->age;}
+		void printinfo(){
+			std::cout << "Name: " << this->name << std::endl;
+			std::cout << "Age: " << this->age << std::endl;
+		}
+
+	protected:
+		std::string name;
+		int age;
+};
+
+class Student : public Person {
+	public:
+		Student(){
+			std::string name = "";
+			int age = 0;
+			int grade = 0;
+		}
+		Student(std::string name , int age , int grade){
+			this->name = name;
+			this->age = age;
+			this->grade = grade;
+		}
+		~Student(){
+		
+		}
+	public:
+		void setGrade(int grade){this->grade = grade;}
+		int getGrade(){return this->grade;}
+
+		void printinfo(){
+			std::cout << "Name: " << this->name << std::endl;
+			std::cout << "Age: " << this->age << std::endl;
+			std::cout << "Grade: " << this->grade << std::endl;
+			
+		}
+	private:
+		int grade;
+		
 
 
+};
 
+
+class Teacher : public Person {
+	public:
+		Teacher(){
+			std::string name = "";
+			int age = 0;
+			std::string lecture = "";
+		}
+		Teacher(std::string name , int age , std::string lecture){
+			this->name = name;
+			this->age = age;
+			this->lecture = lecture;
+		}
+		~Teacher(){
+		
+		}
+	public:
+		void setLecture(std::string lecture){this->lecture = lecture;}
+		std::string getLecture(){return this->lecture;}
+
+		void printinfo(){
+			std::cout << "Name: " << this->name << std::endl;
+			std::cout << "Age: " << this->age << std::endl;
+			std::cout << "Lecture: " << this->lecture << std::endl;
+			
+		}
+	private:
+		std::string lecture;
+		
+
+
+};
+
+int main(){
+Person p("Eric",23);
+	p.printinfo();
+Student st("Er",20,100);
+	st.printinfo();
+Teacher t("Kim",24,"c++");	
+	t.printinfo();
+return 0;
+}
 
 
 
