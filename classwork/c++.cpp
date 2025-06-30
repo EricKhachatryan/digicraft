@@ -891,7 +891,6 @@ int main(){
 }
 
 
-*/
 
 #include <iostream>
 #include <string>
@@ -999,7 +998,90 @@ Teacher t("Kim",24,"c++");
 return 0;
 }
 
+*/
 
+
+#include<iostream>
+#include <string>
+
+class Animal{
+	public:
+		virtual	void sound(){std::cout << "Unknow" << std::endl;}
+};
+
+class Fish : public Animal{
+	public:
+		virtual void foo(){
+			std::cout << "foo" << std::endl;
+		}
+};
+class Fish1 : public Fish{
+	public:
+		void foo(){
+			std::cout << "foo1" << std::endl;
+		}
+};
+
+class Fish2 : public Fish{
+	public:
+		void foo(){
+			std::cout << "foo2" << std::endl;
+		}
+};
+
+class Fish3 : public Fish{
+	public:
+		void foo(){
+			std::cout << "foo3" << std::endl;
+		}
+};
+
+class Cat : public Animal{
+	public:
+		void sound(){std::cout << "cat sount" << std::endl;}
+};
+
+class Dog : public Animal{
+	public:
+		void sound(){std::cout << "dog sound" << std::endl;}
+};
+
+class Horse : public Animal{
+	public:
+		void sound(){std::cout << "horse sound" << std::endl;}
+};
+
+int add(){
+int a = 0;
+int b = 0;
+return a + b;
+}
+int add(int a, int b){
+return a + b;
+}
+
+int main(){
+Animal* anim[4]; 
+anim[0] = new Animal;
+anim[1] = new Cat;
+anim[2] = new Dog;
+anim[3] = new Horse;
+for(int i = 0;i <= 3; i++){
+anim[i]->sound();
+}
+Fish* fish[3];
+fish[0] = new Fish1;
+fish[1] = new Fish2;
+fish[2] = new Fish3;
+for(int i = 0;i < 3; i++){
+fish[i]->foo();
+}
+
+std::cout << add() << std::endl;
+std::cout << add(5,5) << std::endl;
+
+return 0;
+}
 
 
 
