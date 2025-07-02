@@ -998,7 +998,6 @@ Teacher t("Kim",24,"c++");
 return 0;
 }
 
-*/
 
 
 #include<iostream>
@@ -1082,6 +1081,82 @@ std::cout << add(5,5) << std::endl;
 
 return 0;
 }
+
+*/
+
+
+#include<iostream>
+#include<string>
+
+//Pass by
+
+void fooValue(int num){
+num += 1;
+std::cout << num << std::endl;
+}
+
+void fooRef(int& num){
+num += 1;
+std::cout << num << std::endl;
+}
+
+void fooPointer(int* num){
+*num += 1;
+std::cout << *num << std::endl;
+}
+
+// Return
+
+int fooRetVal(int num){
+	num += 1;
+	return num;
+}
+
+int& fooRetRef(int num){
+	num += 1;
+	return num;
+}
+
+int* fooRetPoint(int num){
+num += 1;
+	return &num;
+}
+
+int main(){
+
+	int mynum = 5;
+//Pass by
+
+	fooValue(mynum);
+	std::cout << mynum << std::endl;
+	
+	fooRef(mynum);
+	std::cout << mynum << std::endl;
+
+	fooPointer(&mynum);
+	std::cout << mynum << std::endl;
+
+//Return
+
+	std::cout << fooRetVal(mynum) << std::endl;
+	std::cout << fooRetRef(mynum) << std::endl;
+	std::cout << fooRetPoint(mynum) << std::endl;
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
