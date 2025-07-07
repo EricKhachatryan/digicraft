@@ -1082,7 +1082,6 @@ std::cout << add(5,5) << std::endl;
 return 0;
 }
 
-*/
 
 
 #include<iostream>
@@ -1145,6 +1144,68 @@ int main(){
 
 	return 0;
 }
+
+
+#include<iostream>
+#include<string>
+
+class Animal {
+	public:
+		Animal(std::string& name) : name(name){
+		}
+		~Animal(){}
+	public:
+		std::string getName(){
+		return this->name;
+		}
+	protected:
+		const std::string name;
+};
+
+class Fish : public Animal {
+	public:
+		Fish(std::string& name, int size) : Animal(name), size(size) {
+		}
+		~Fish(){}
+	public:
+		int getSize(){
+		return this->size;
+		}
+	protected:
+		int size;
+};
+
+class Shark : public Fish{
+	public:
+		Shark(std::string& name,int size,int weight) : Fish(name,size) , weight(weight){
+		}
+		~Shark(){}
+	public: 
+		int getWeight(){
+		return this->weight;
+		}
+	private:
+		int weight;
+};
+
+
+int main(){
+	std::string name = "fishh";
+	Shark s(name,100,50); 
+	std::cout << s.getName() << s.getSize() << s.getWeight() << std::endl;
+	return 0;
+}
+
+*/
+
+
+
+
+
+
+
+
+
 
 
 
