@@ -34,7 +34,6 @@ def sayHallo(name="AAA"):
 sayHallo("Eric")
 sayHallo()
 
-"""
 def Foo(sc):
     if score < 50 :
          print (name,"fail")
@@ -48,6 +47,61 @@ for i in range(user):
     foo += score
     Foo(score)
 print(foo/user)
+
+#LIST _____________________
+arr = ["1", "2", "3", 5]
+arr.append("4")
+arr[3] = False
+print(arr[3])
+for x in arr:
+    print(x)
+
+print(len(arr)) #listi argumentneri qanak/ size
+
+print (44 in arr) # stugel 44 ka arrum te che
+
+
+#Tuple________________________
+mytuple = [("Eric",21),("x",11)]
+cords = (1,20)
+
+print(mytuple)
+print(mytuple[1])
+x = mytuple[0]
+print(x[0])
+
+x,y = cords
+for x, y in mytuple:
+    print(x)
+    print(y)
+
+
+#Set_______________________
+
+arr = {2 , 4 , 6}
+arr.add(8)
+print(arr)
+
+x = {1,2,3}
+y = {3,4,5}
+print(y | x)
+print(y & x)
+print(y - x)
+
+
+#Map_________________________
+
+person = { "name" : "Eric","age" : 23}
+print(person["name"])
+print(person["age"])
+person["city"] = "Vanadzor"
+print(person)
+
+for key , value in person.items():
+    print(key)
+    print(value)
+
+"""
 
 
 
