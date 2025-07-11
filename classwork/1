@@ -156,4 +156,5 @@ class Employee(Worker):
 
 work = Employee(100,"Eric",23,150000)
 
+print(work)
 
