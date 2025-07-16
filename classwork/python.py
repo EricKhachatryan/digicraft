@@ -246,11 +246,25 @@ Mat = [Shape(),Circle(),Square(),Rectangle()]
 for mat in Mat:
     mat.area()
 
+def calculator(num1,num2,operator):
+    if operator == "+" :
+        return num1 + num2
+    elif operator == "-" :
+        return num1 - num2
+    elif operator == "*" :
+        return num1 * num2
+    elif operator == "/" :
+        return num1 / num2
+    else :
+        print("sxal argument")
+
+num1 = int(input("num 1 : "))
+num2 = int(input("num 1 : "))
+operator = str(input("num 1 : "))
+
+print(calculator(num1,num2,operator))
+
 """
-
-
-
-
 
 
 
