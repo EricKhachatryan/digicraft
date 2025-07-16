@@ -106,7 +106,6 @@ int main(){
 
 	return 0;
 }
-*/
 
 void input( int& a,int& b){
 	std::cin >> a;
@@ -130,7 +129,91 @@ int main(){
 
 
 
+	enum Weekday {
+		Monday,
+    		Tuesday,
+    		Wednesday,
+    		Thursday,
+    		Friday,
+    		Saturday,
+    		Sunday,
 
+	};	
+
+int main (){
+	int num = 0;
+	std::cout << "inpute num 0-6 : ";
+	std::cin >> num;
+	enum Weekday day = static_cast<Weekday>(num);
+	
+	
+	switch (day){
+		case Monday :
+			std::cout << "Monday" << std::endl;
+			break;
+
+		case Tuesday :
+			std::cout << "Tuesday" << std::endl;
+			break;
+		
+		case Wednesday :
+			std::cout << "Wednesday" << std::endl;
+			break;
+		
+		case Thursday :
+			std::cout << "tursday" << std::endl;
+			break;
+		
+		case Friday :
+			std::cout << "Friday" << std::endl;
+			break;
+		
+		case Saturday :
+			std::cout << "saturday" << std::endl;
+			break;
+
+		case Sunday :
+			std::cout << "Sunday" << std::endl;
+			break;
+		
+		default :
+			std::cout << "def" << std::endl;
+			break;
+	}
+
+
+
+
+return 0;
+}
+
+*/
+
+struct Student {
+	std::string name;
+	int age;
+	char grade;
+
+};
+
+void printStudent(const Student &s){
+	
+	std::cout << "student : " << s.name << std::endl;
+	std::cout << "age : " << s.age << std::endl;
+	std::cout << "grade : " << s.grade << std::endl;
+}
+
+int main () {
+Student student[3];
+for(int i = 0; i < 3;++i){
+std::cout << "input name age grade : " << std::endl;
+std::cin >> student[i].name >> student[i].age >> student[i].grade;
+}
+for (int i = 0; i < 3; ++i){
+printStudent(student[i]);
+}
+return 0;
+}
 
 
 
