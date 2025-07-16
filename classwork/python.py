@@ -122,7 +122,7 @@ class Student(Person):
 st = Student("Eric", 21, 100)
 st.sayHello()
 
-"""
+
 
 
 class Worker:
@@ -155,5 +155,119 @@ class Employee(Worker):
         return self.salory
 
 work = Employee(100,"Eric",23,150000)
+
+#python Polimorphism______________________________________
+
+
+class Animal:
+    def sound(self):
+        print("animal sound")
+
+class Dog:
+    def sound(self):
+        print("dog sound")
+
+animals = [Animal(), Dog()]
+for animal in animals:
+    animal.sound()
+
+#Run time Polymorphism_____________________________
+class Animal:
+    def sound(self):
+        print("animal sound")
+
+class Dog(Animal):
+    def sound(self):
+        print("dog sound")
+
+class Cat(Animal):
+    def sound(self):
+        print("cat sound")
+
+def makeSound(animal: Animal):
+        animal.sound()
+
+makeSound(Animal())
+makeSound(Dog())
+makeSound(Cat())
+
+
+#bu`ilt-in Polymorphism_______________________________
+
+print(len([1,2,3,4]))
+print(len(["Hello"]))
+
+print ("a" + "b")
+print(8 + 10)
+print("8" + str(10))
+
+
+class Shape:
+    def area(self):
+        print("area")
+
+class Circle(Shape):
+    def area(self):
+        print("CIRCLE")
+
+class Square(Shape):
+    def area(self):
+        print("SQUARE")
+
+class Rectangle(Shape):
+    def area(self):
+        print("RECTANGLE")
+
+def CalculateArea(shape: Shape):
+    shape.area()
+
+CalculateArea(Shape())
+CalculateArea(Circle())
+CalculateArea(Square())
+CalculateArea(Rectangle())
+
+class Shape:
+    def area(self):
+        print("area")
+
+class Circle(Shape):
+    def area(self):
+        print("CIRCLE")
+
+class Square(Shape):
+    def area(self):
+        print("SQUARE")
+
+class Rectangle(Shape):
+    def area(self):
+        print("RECTANGLE")
+
+Mat = [Shape(),Circle(),Square(),Rectangle()]
+for mat in Mat:
+    mat.area()
+
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
