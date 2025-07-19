@@ -187,7 +187,6 @@ int main (){
 return 0;
 }
 
-*/
 
 struct Student {
 	std::string name;
@@ -214,6 +213,362 @@ printStudent(student[i]);
 }
 return 0;
 }
+
+
+int main (){
+	int x = 0;
+	std::cin >> x ;
+	if(x > 0){
+		std::cout << "positive" << std::endl;
+	}else if(x < 0){
+		std::cout << "negative" << std::endl;
+	}else
+		std::cout << "zero" << std::endl;
+	int sum = 0;
+	int n = 0;
+	std::cin >> n;
+	for (int i = 1;i <= n;i++){
+		sum += i;	
+	}
+	std::cout << sum << std::endl;
+	
+
+	return 0;
+}
+
+
+int square (int number){
+	return number * number;
+}
+
+int main(){
+	std::cout << square(5) << std::endl; 
+
+return 0;
+}
+
+
+int sumRange(int& from,int& to){
+	int sum = 0;
+	for (int i = from; i <= to;++i){
+		sum += i;	
+	}	
+return sum;
+}
+
+
+
+
+int main(){
+	int from = 0;
+	int to = 0;
+	std::cout << "input from and to :";
+	std::cin >> from >> to;
+	std::cout << sumRange(from,to) << std::endl;
+	return 0;
+}
+
+
+void swap(int& a,int& b){
+	int swap = a;
+	a = b;
+	b = swap;
+
+	std::cout << a << b << std::endl;
+
+}
+
+
+int main(){
+	int a = 0;
+	int b = 0;
+	std::cin >> a >> b;
+	swap(a,b); 
+
+return 0;
+}
+
+int multiply(int a, int b){
+	return a * b;
+}
+double multiply(double a, double b){
+	return a * b;
+}
+
+
+int main (){
+	std::cout << multiply(5, 5) << std::endl;
+	std::cout << multiply(5.0, 2.5) << std::endl;
+
+
+return 0;
+}
+
+void printValue(int a){
+	std::cout << a << std::endl;
+}
+void printValue(double a){
+	std::cout << a << std::endl;
+}
+void printValue(std::string a){
+	std::cout << a << std::endl;
+}
+
+
+int main(){
+printValue(5);	
+printValue(4.5);	
+printValue("eric");	
+return 0;
+}
+
+
+
+
+void multiply(int a, int b = 2){
+	std::cout << a * b << std::endl;
+}
+
+inline int cube(int x){
+	return x * x * x;
+}
+
+int main(){
+multiply(5);
+multiply(2,9);
+std::cout << cube(3) << std::endl;
+
+
+	return 0;
+}
+
+
+// Rrcursion____________________________
+
+int sum(int n){
+	if (n == 1){
+		return 1;
+	}
+	return n + sum(n-1);  
+}
+
+
+
+
+int main(){
+	std::cout << "res : " << sum(5) << std::endl;
+	return 0;
+}
+
+
+int factorial(int f){
+	if(f == 0){
+		return 1;
+	}if else(f < 0){
+		std::cout << "f is negative" << std::endl;
+		return 0;
+	}else
+		return f * factorial(f - 1);
+}
+
+int main (){
+	int n = 0;
+	std::cin >> n;
+	std::cout << "resault : " << factorial(n) << std::endl;
+	
+	return 0;
+}
+
+
+//Factorial iteration____________________
+
+int factorial(int n){
+	if(n == 0){
+		return 1;
+	}
+	if(n <= 0){
+		std::cout << "n is negative" << std::endl;
+		return 0;
+	}
+	int resault = 1;
+	for(int i = 1;i <= n;++i){
+		resault *= i;
+	}
+	
+	return resault;
+
+}
+
+int main (){
+	int n = 0;
+	std::cin >> n;
+	std::cout << "resault " << factorial(n) << std::endl;
+	return 0;
+}
+
+
+
+//Array_________________________________________
+
+
+int main(){
+	int arr[5];
+	for(int i = 0; i < 5;++i){
+		std::cin >> arr[i];
+	}
+	int max = arr[0];
+	for (int i = 0;i < 5;++i){
+		if(arr[i] > max){
+			max = arr[i];
+		}
+	}
+	std::cout << max << std::endl;
+	return 0;
+}
+
+//2d array)_________________________________
+
+
+
+int main(){
+	int arr[2][3];
+	int sum = 0;
+	for(int i = 0;i < 2;++i){
+		for(int j = 0;j < 3;++j){
+			std::cin >> arr[i][j];
+			sum += arr[i][j];
+		}	
+	}
+	std::cout << sum << std::endl;	
+
+	
+	return 0;
+}
+
+
+// Arrays and Functions
+
+int sumArray(int arr[],int size){
+	int sum = 0;
+	for(int i = 0;i < size;++i){
+		sum += arr[i];
+	}
+	return sum;
+}
+
+int main(){
+	int arr[5];
+	for(int i = 0;i < 5;++i){
+		std::cin >> arr[i];
+	}
+	std::cout << sumArray(arr,5) << std::endl;
+
+	return 0;
+}
+
+
+int findMax(const int arr[],const int size){
+	int max = arr[0];
+	for(int i = 0;i < size;++i){
+		if(max < arr[i]){
+			max = arr[i];
+		}
+	}
+	return max;
+}
+
+int main(){
+	int arr[5];
+	for(int i = 0;i < 5;++i){
+		std::cin >> arr[i];
+	}
+	std::cout << findMax(arr,5) << std::endl;
+
+	return 0;
+}
+
+//pointer_________________________________________________
+
+void swap (int* a ,int* b){
+	int temp = *a;
+       	*a = *b;
+	*b = temp;
+}
+
+int main(){
+	int a = 5;
+	int b = 10;
+	swap(&a,&b);
+	std::cout << a << b << std::endl;
+return 0;
+}
+
+
+void doubleElements(int* arr, int size) {
+    for(int i = 0;i < size;++i){
+    	arr[i] = 2 * arr[i]; 
+    }
+}
+
+int main() {
+    int arr[5];
+    for (int i = 0; i < 5; ++i) {
+        std::cin >> arr[i];
+    }
+
+    doubleElements(arr, 5);
+
+    for (int i = 0; i < 5; ++i) {
+        std::cout << arr[i] << " ";
+    }
+
+    return 0;
+}
+
+
+//String_______________________________________________________________
+
+#include <cstring>
+
+int main() {
+    char str1[] = "hello";
+    char str2[] = "world";
+
+    std::cout << "Длина str1: " << strlen(str1) << std::endl;
+
+    char str3[20]; // обязательно достаточно места!
+    strcpy(str3, str1); // копирует "hello" в str3
+    std::cout << "str3 после копирования: " << str3 << std::endl;
+
+    strcat(str3, str2); // добавляет "world" в конец "hello"
+    std::cout << "str3 после конкатенации: " << str3 << std::endl;
+
+    int result = strcmp(str1, str2); // сравнение
+    std::cout << "Результат сравнения str1 и str2: " << result << std::endl;
+
+    return 0;
+}
+
+
+*/
+
+
+
+
+
+int main(){
+	std::string name = "Eric";
+	std::cout << name.size() << std::endl;; 
+	std::cout << name.length() << std::endl;; 
+std::string text = "Hello world!";
+std::cout << text[0];           // 'H'
+std::cout << text.substr(6, 5); // "world"
+std::cout << text.find("lo");   // 3
+	return 0;
+}
+
+
+
 
 
 
