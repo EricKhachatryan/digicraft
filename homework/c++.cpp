@@ -550,12 +550,6 @@ int main() {
 }
 
 
-*/
-
-
-
-
-
 int main(){
 	std::string name = "Eric";
 	std::cout << name.size() << std::endl;; 
@@ -567,18 +561,139 @@ std::cout << text.find("lo");   // 3
 	return 0;
 }
 
+void squareAll(int* arr, int size){
+	for(int i = 0; i < size;++i){
+		arr[i] *= arr[i];
+
+	}
+
+}
+
+int main(){
+	int arr[5];	
+	for (int i = 0;i < 5;++i){
+		std::cin >> arr[i];
+	
+	}
+	squareAll(arr,5);
+	for (int i = 0;i < 5;++i){
+		std::cout << arr[i] << std::endl;
+	
+	}
+
+	return 0;
+}
+
+
+// DINAMIC memory / ptr to ptr
 
 
 
 
+int main(){
+	int sum = 0;
+	int n = 0;
+	std::cin >> n;
+	int* arr = new int[n];
+	for(int i = 0;i < n;++i){
+		std::cin >> arr[i];
+	}
+	for(int i = 0;i < n;++i){
+		std::cout << arr[i] << std::endl;
+	}
+	for(int i = 0;i < n;++i){
+		sum += arr[i];
+	}	
+	std::cout << sum << std::endl;
+
+	delete[] arr;	
+	return 0;
+
+}
 
 
 
+int main(){
+	int x = 0;
+	int& ref = x;
+	std::cin >> x;
+	ref = 14;
+	std::cout << x << std::endl;
+	
+	return 0; 
+}
+
+*/
+
+
+//oop classs__________________________
 
 
 
+class Car{
+	public:
+		void setMark(std::string mark){
+			this->mark = mark; 
+		} 
+		std::string getMark() const{
+			return this->mark;
+		}
+		void setYear(int year){
+			this->year = year; 
+		} 
+		int getYear() const{
+			return this->year;
+		}
+		
+		Car() : mark(""),year(0){}
+		Car(std::string mark,int year) : mark(mark), year(year){}
+		~Car(){}
+		
+       		virtual void printinfo(){
+			std::cout << this->mark << this->year << std::endl;
+		}
+
+	protected:
+		std::string mark;
+	 	int year;
 
 
+};
+
+class ElectricCar : public Car{
+
+	public:
+		void setBattery(int battery){
+			this->battery = battery;
+		}
+		int getBattery() const{
+			return this->battery;
+		}
+		
+		ElectricCar(std::string mark,int year,int battery) : Car(mark,year), battery(battery) {}
+		ElectricCar() : Car(), battery(0){} 
+		~ElectricCar(){}
+	
+       		void printinfo() {
+			std::cout << this->mark << this->year << this->battery << std::endl;
+		}
+	
+	private:
+		int battery;
+};
+
+int main(){
+	Car c("bmw",2018);
+	c.printinfo();
+	ElectricCar e("mers",2005,10000);
+	e.printinfo();
+
+ Car* basePtr = new ElectricCar("Nissan", 2015, 6500);
+    basePtr->printinfo(); // Выведет из ElectricCar
+    delete basePtr;
+	
+	return 0;
+}
 
 
 
