@@ -623,7 +623,6 @@ int main(){
 	return 0; 
 }
 
-*/
 
 
 //oop classs__________________________
@@ -694,6 +693,132 @@ int main(){
 	
 	return 0;
 }
+
+
+
+bool isPrime(int number) {
+    if (number <= 1)
+        return false;
+    for (int i = 2; i * i <= number; ++i) {
+        if (number % i == 0)
+            return false;
+    }
+    return true;
+}
+
+int main() {
+    int n;
+    std::cout << "Введите число: ";
+    std::cin >> n;
+
+    if (isPrime(n))
+        std::cout << n << " является простым числом." << std::endl;
+    else
+        std::cout << n << " не является простым числом." << std::endl;
+
+    return 0;
+}
+
+class Student{
+	public:
+		Student() : name(""), age(0), clas(""){}
+		Student(std::string name,int age,std::string clas) : name(name), age(age), clas(clas) {} 
+		~Student(){}
+		
+		void setName(std::string name){this->name = name;}
+		void setAge(int age){this->age = age;}
+		void setClas(std::string clas){this->clas = clas;}
+		std::string getName(){return this->name;}
+		int getAge(){return this->age;}
+		std::string getClas(){return this->clas;}
+		void printinfo(){
+			std::cout << this->name << this->age << this->clas << std::endl;
+		}
+
+	private:
+		std::string name;
+		int age;
+		std::string clas;
+
+};
+
+int main(){
+	Student st;
+	st.setName("ERIC");
+	st.setAge(23);
+	st.setClas("105g");
+	st.printinfo();
+	
+	return 0;
+}
+
+
+class Circle{
+
+	public:
+		Circle() : radius(0){}
+		Circle(int radius) : radius(radius) {}
+		~Circle(){}
+		void setRadius(int radius){this->radius = radius;}
+		int getRadius(){return radius;}
+	public:
+		float c(){
+			return 2 * 3.14 * radius;
+		}	
+		
+		float S(){
+		return 3.14 * radius * radius;
+		}	
+	private:
+		int radius;
+
+};
+
+
+int main(){
+	Circle c;
+	c.setRadius(5);
+	std::cout << c.c() << std::endl;
+	std::cout << c.S() << std::endl;
+	 return 0;
+}
+
+*/
+
+
+class Animal{
+	public :
+		virtual void speak(){
+			std::cout << "animal" << std::endl;
+		}	
+
+};
+
+class Dog : public Animal{
+	public:
+		void speak(){
+			std::cout << "dog" << std::endl;
+		}
+};
+
+int main(){
+	Animal a ;
+	a.speak();
+	Animal* anim = new Dog();
+	anim->speak();
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
