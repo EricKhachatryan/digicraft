@@ -783,7 +783,7 @@ int main(){
 	 return 0;
 }
 
-*/
+
 
 
 class Animal{
@@ -808,6 +808,138 @@ int main(){
 	anim->speak();
 	return 0;
 }
+
+
+
+
+int textTest(const std::string& text){
+	int count = 0;
+	for(char ch : text){
+		if(ch >= '0' && ch <= '9'){
+		count++;
+		}
+	}
+
+return count;
+}
+
+int main(){
+std::string text = "";
+std::cin >> text;
+std::cout << textTest(text) << std::endl;
+	return 0;
+}
+
+
+int reverseNumber(int n) {
+    int reversed = 0;
+    while (n != 0) {
+        int digit = n % 10;         // Получаем последнюю цифру
+	std::cout << digit << std::endl;
+	reversed = reversed * 10 + digit; // Добавляем цифру в конец
+	std::cout << reversed << std::endl;
+        n /= 10;                    // Убираем последнюю цифру
+    }
+    return reversed;
+}
+
+int main() {
+    int number;
+    std::cout << "Enter an integer: ";
+    std::cin >> number;
+
+    int result = reverseNumber(number);
+    std::cout << "Reversed number: " << result << std::endl;
+
+    return 0;
+}
+
+//palindrom 
+bool isPalindrome(int number) {
+    int original = number;
+    int reversed = 0;
+
+    while (number != 0) {
+        int digit = number % 10;
+        reversed = reversed * 10 + digit;
+        number /= 10;
+    }
+
+    return original == reversed;
+}
+
+int main() {
+    int num;
+    std::cout << "Enter an integer: ";
+    std::cin >> num;
+
+    if (isPalindrome(num)) {
+        std::cout << "The number is a palindrome." << std::endl;
+    } else {
+        std::cout << "The number is NOT a palindrome." << std::endl;
+    }
+
+    return 0;
+}
+
+
+
+*/
+
+int main() {
+    const int SIZE = 8;
+    int arr[SIZE];
+
+    std::cout << "Enter 8 integers:\n";
+    for (int i = 0; i < SIZE; ++i) {
+        std::cin >> arr[i];
+    }
+
+    int max1 = arr[0];
+    int max2 = arr[0];
+
+    // Сначала найдём первый максимум
+    for (int i = 1; i < SIZE; ++i) {
+        if (arr[i] > max1) {
+            max1 = arr[i];
+        }
+    }
+
+    // Теперь ищем второй максимум, исключая max1
+    for (int i = 0; i < SIZE; ++i) {
+        if (arr[i] != max1) {
+            if (arr[i] > max2) {
+                max2 = arr[i];
+            }
+        }
+    }
+    std::cout << max2 << std::endl;
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
