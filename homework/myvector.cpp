@@ -20,6 +20,9 @@ class MyVector{
 		int Size(){return this->size;}
 	       	int Capacity(){return this->capacity;}
 		
+		void at(int num){
+			std::cout << arr[--num] << std::endl;	
+		}	
 
         public:
                 MyVector() : size(0), capacity(0), arr(nullptr) {}
@@ -51,13 +54,10 @@ int main(){
         vector->push_back(50);
 	std::cout << vector->Size() << std::endl;
 	std::cout << vector->Capacity() << std::endl;
-        vector->push_back(50);
+        vector->push_back(141);
 	std::cout << vector->Size() << std::endl;
 	std::cout << vector->Capacity() << std::endl;
-	vector->pop_back();
-	std::cout << vector->Size() << std::endl;
-	std::cout << vector->Capacity() << std::endl;
-	vector->clear();
+	vector->at(1);
 	std::cout << vector->Size() << std::endl;
 	std::cout << vector->Capacity() << std::endl;
 	return 0;
