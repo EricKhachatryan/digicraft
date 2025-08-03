@@ -1,3 +1,5 @@
+#include <iostream>
+#include <string>
 /*
 #include <iostream>
 int main () { 
@@ -1198,8 +1200,30 @@ int main(){
 
 */
 
+class MyVector{
+	public:
+		void push_back(){
+			int* arr = new int[];
+				
+		}	
+	public:
+		MyVector() : size(0), capacity(0), arr(nullptr) {}
+		~MyVector(){}
+		int getSize(){return this->size};
+		int getCapacity(){return this->capacity}
+		void setSize(int size){this->size = size}
+		void setCapacity(int capacity){this->capacity}
+	private:
+		int size;
+		int capacity;	
+		int* arr;
+};
 
 
+int main(){
+	MyVector vector;
+	return 0;
+}
 
 
 

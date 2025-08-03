@@ -264,11 +264,53 @@ operator = str(input("num 1 : "))
 
 print(calculator(num1,num2,operator))
 
+
+
+x = 100
+
+def change():
+    global x
+    x = 200
+    print(x)
+
+change()
+print(x)
+
+day = 111
+month = 3
+match = day:
+    case 1 | 11 | 111 if month == 3:
+        print("monday")
+    case 2:
+        print("2")
+    case 3:
+        print("3")
+    case 4:
+        print("4")
+    case _:
+        print("def")
+   
+
+
+x= 100
+isInt = isinstance(x,int )
+print(isInt)
+
+if isInt:
+    print("integer")
+
 """
+def f(n):
+    return lambda x: x * n 
+
+doubler = f(2)
+tripler = f(3)
+print(doubler(10))
+print(tripler(10))
 
 
 
-
+    
 
 
 

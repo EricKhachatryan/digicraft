@@ -24,8 +24,6 @@ while True:
     else:
         print("false argument")
 
-"""
-
 
 list = []
 while True:
@@ -53,5 +51,27 @@ while True:
     else:
         print("false argument")
 
+x = 100
 
+def change():
+    global x
+    x = 200
+    print(x)
 
+change()
+print(x)
+"""
+day = 111
+month = 3
+match = day:
+    case 1 | 11 | 111 if month == 3:
+        print("monday")
+    case 2:
+        print("2")
+    case 3:
+        print("3")
+    case 4:
+        print("4")
+    case _:
+        print("def")
+   
