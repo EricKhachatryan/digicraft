@@ -82,21 +82,17 @@ class User {
 	private:
     		std::string username;
     		std::string password;
-    		std::vector<int> borrowedBookIDs; // хранит ID взятых книг (максимум 3)
-
+    		std::vector<int> borrowedBookIDs; 
 	public:
-    	// Регистрация пользователя
     		void registerUser() {
     			username = "eric";
 			password = "pass";
 		}
 
-    		// Вход в систему
     		bool login(const std::string& uname, const std::string& pass) {
         		return (uname == username && pass == password);
     		}
 
-    		// Взять книгу
     		void borrowBook(std::vector<Book>& books) {
         		if (borrowedBookIDs.size() >= 3) {
         	    		std::cout << "You have taken the maximum number of books (3)" << std::endl;
@@ -117,7 +113,6 @@ class User {
         		std::cout << "Book with this ID not found" << std::endl;
    		}
 
-    		// Вернуть книгу
     		void returnBook(std::vector<Book>& books) {
         		if (borrowedBookIDs.empty()) {
             			std::cout << "You didn't take the books" << std::endl;
@@ -142,7 +137,6 @@ class User {
         		std::cout << "you didn't take the book from that id" << std::endl;
    		}
 
-    		// Показать все взятые книги
     		void viewBorrowedBooks(const std::vector<Book>& books) const {
         		if (borrowedBookIDs.empty()) {
             			std::cout << "No books taken." << std::endl;
@@ -163,7 +157,7 @@ class Admin {
 	public:
 		void addBook(std::vector<Book>& books) {
         		Book newBook;
-        		newBook.addBook(); // Request book data input
+        		newBook.addBook();
         		books.push_back(newBook);
         		std::cout << "Book successfully added!" << std::endl;
     		}
@@ -199,24 +193,173 @@ class Admin {
         		}
     		}
 
-    		void viewUsers(const std::vector<User>& users) {
-        		if (users.empty()) {
-            			std::cout << "No users registered.\n";
-            			return;
-        		}
-        		std::cout << "\n=== List of users ===\n";
-        		for (size_t i = 0; i < users.size(); ++i) {
-            			std::cout << i + 1 << ". User registered.\n"; 
-            			// Optionally, output user name via getter
-        		}
-    		}
+  		void viewUsers(const std::vector<User>& users) {
+                	if (users.empty()) {
+                        	std::cout << "No users registered.\n";
+                                return;
+                        }
+                        std::cout << "\n=== List of users ===\n";
+                        for (size_t i = 0; i < users.size(); ++i) {
+                                std::cout << i + 1 << ". User registered.\n";
+                        }
+                }
 };
+
+void userMenu(User& user, std::vector<Book>& books){
+	int input = 0;
+	while (true) {
+		std::cout << "=======USER-MENU=======" << std::endl;
+		std::cout << "Borrow book = press 1" << std::endl;
+		std::cout << "Return book = press 2" << std::endl;
+		std::cout << "View borrowed books = press 3" << std::endl;
+		std::cout << "View all books = press 4" << std::endl;
+		std::cout << "Logout = press 5" << std::endl;
+		std::cout << "input number : ";
+		std::cin >> input;		
+		switch(input){
+			
+			case 1:{
+				user.borrowBook(books);
+				break;
+			       }
+			case 2:{
+				user.returnBook(books);       
+				break;
+			       }
+			case 3:{
+				user.viewBorrowedBooks(books);
+				break;
+			       }
+			case 4:{
+				std::cout << user.viewAllBooks() << std::endl;
+				break;
+			       }
+			case 5:{
+				std::cout << "you Logout!" << std::endl;
+				return;
+			       }
+			default:{
+				std::cout << "you input incorrect number input 1,2,3,4 or 5!" << std::endl;
+				break;
+				}
+		}
+	}
+}
+
+
+
+void adminMenu(Admin& admin,std::vector<Book>& books,User& user){
+	int input = 0;
+	while (true) {
+		std::cout << "=======ADMIN-MENU=======" << std::endl;
+		std::cout << "Add book = press 1" << std::endl;
+		std::cout << "Remove book = press 2" << std::endl;
+		std::cout << "View all books = press 3" << std::endl;
+		std::cout << "View Users = press 4" << std::endl;
+		std::cout << "Logout = press 5" << std::endl;
+		std::cout << "input number : ";
+		std::cin >> input;		
+		switch(input){
+			case 1:{
+				admin.addBook(books);       
+				break;
+			       }
+			case 2:{
+				admin.removeBook(books);
+				break;
+			       }
+			case 3:{
+				admin.viewAllBooks(books);
+			 	break;
+			       }
+			case 4:{
+				       std::vector<User> tmpUser = {user}; 
+				admin.viewUsers(tmpUser);
+				break;
+			       }
+			case 5:{
+				std::cout << "you Logout!" << std::endl;
+				return;
+				}
+			default:{
+				std::cout << "you input incorrect number input 1,2,3,4 or 5!" << std::endl;
+				break;
+				}
+		}
+	}
+}
+
+
+void loginMenu(std::vector<Book>& books,User& user){
+	Admin admin;
+	int input = 0;
+	while (true) {
+		
+		std::cout << "=======MENU=======" << std::endl;
+		std::cout << "Login as Admin = Press 1" << std::endl;
+		std::cout << "Login as User = Press 2" << std::endl;
+		std::cout << "Exit = Press 3" << std::endl;
+		std::cout << "Input number : ";
+		std::cin >> input;
+		switch(input){
+			case 1: {
+				for ( int i = 0 ; i < 3; ++i ){
+					std::string login,password;
+					std::cout << "=======ADMIN=======" << std::endl; 
+					std::cout << "Login : "; 
+					std::cin >> login;
+					std::cout << "Password : "; 
+					std::cin >> password;
+					if( login == "eric" && password == "pass" ){
+						std::cout << "you have successfully logged in as admin!" << std::endl;
+						adminMenu(admin,books,user);
+						break;
+					}else{
+						std::cout << "password or login incorrect" << std::endl;
+					}
+				}
+				break;
+				}
+			case 2:{
+				user.registerUser();
+				for ( int i = 0 ; i < 3; ++i ){
+					std::string login,password;
+					std::cout << "=======USER=======" << std::endl; 
+					std::cout << "Login = "; 
+					std::cin >> login;
+					std::cout << "Password = "; 
+					std::cin >> password;
+					if(user.login(login,password)){
+						std::cout << "you have successfully logged in as user!" << std::endl;
+						userMenu(user,books);
+						break;
+					}else{
+						std::cout << "password or login incorrect" << std::endl;
+					}
+				}
+				break;
+			       }
+			case 3:{
+				std::cout << "Goodbye" << std::endl;	
+				return;
+			       }
+			default:{
+				std::cout << "you input incorrect number input 1,2 or 3!" << std::endl;
+				break;
+				}
+		}
+	}	
+} 
+
 
 int main(){
 
-Book b(50,"eric","eric","eric",10,20);
-std::cout << b.getID() << std::endl;
-std::cout << b.getTitle() << std::endl;
+std::vector<Book> books;
+User user;
+loginMenu(books,user);
+
+
+
 
 
 
