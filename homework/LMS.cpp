@@ -187,8 +187,7 @@ public:
     }
 
     void addBook(Book books[], int &totalBooks) {
-        if (totalBooks >= 100) { // Предполагаем максимум 100 книг
-            std::cout << "Library is full, cannot add more books." << std::endl;
+        if (totalBooks >= 100) { std::cout << "Library is full, cannot add more books." << std::endl;
             return;
         }
         books[totalBooks].addBook();
@@ -245,8 +244,7 @@ private:
     static Library* instance;
     std::vector<Book> books;
     std::vector<User> users;
-    int currentUserIndex; // Для отслеживания текущего пользователя
-
+    int currentUserIndex; 
     Library() : currentUserIndex(-1) {}
 
 public:
@@ -300,7 +298,6 @@ public:
     }
 };
 
-// Инициализация статического члена
 Library* Library::instance = nullptr;
 
 void searchBooks() {
@@ -420,8 +417,8 @@ void adminMenu() {
     int size;
     Book* books = library.getBooksArray(size);
     if (!books) {
-        books = new Book[100]; // Резервный массив, если пусто
-        size = 0;
+        books = new Book[100];  
+ 	size = 0;
     }
     User* users = library.getUsersArray(size);
     if (!users) {
