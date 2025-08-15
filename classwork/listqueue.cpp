@@ -26,21 +26,33 @@ public:
 		}
 		size++;
 	}		
-	void dequeue(){
+	int dequeue(){
 		if(isEmpty()){
 			std::cout << "Linked List is Empty" << std::endl;
-			return;
+			return -1;
 		} else {
 		Node* tmp = topNode->next;
-	      	delete topNode;
+	      	int tmpval = topNode->value;
+		delete topNode;
 		topNode = tmp;
 		size--;
+		return tmpval;
 		}
 	}
-	int get(){return this->topNode->value;}	
-      	int Size(){return this->size;}
-      	bool isEmpty(){return this->topNode == nullptr;}
-      //node struct
+
+	int get(){
+		if(isEmpty()){
+			std::cout << "Linked List is Empty" << std::endl;
+			return -1;
+		} else {
+			return this->topNode->value;
+		}
+
+	}	
+	int Size(){return this->size;}
+      
+	bool isEmpty(){return this->topNode == nullptr;}
+	//node struct
 private:
         struct Node{
                 public:
