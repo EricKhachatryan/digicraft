@@ -2,22 +2,6 @@
 #include <string>
 
 class Tree{
-//public API
-public:
-	bool visEmpty(){return this->root->!value;}
-	
-	void insert(int val){
-		insertInner();		
-	
-	}
-	
-
-// helper fun
-private:
-	Node* insertInner(Node* node, int val){
-	
-	}
-
 // struct Node
 private:
 	struct Node{
@@ -27,6 +11,25 @@ private:
 		Node* left;
 		Node* right;
 	};
+//public API
+public:
+	void insert(int val){
+	root = insertInner(root, val);		
+	
+	}
+// helper functions 
+private:
+	Node* insertInner(Node* node, int val){
+		if(node == nullptr){
+			return new Node(val);
+		}
+		if(val < node->value){
+			node->left = insertInner(node->left,val);
+		} else {
+			node->right = insertInner(node->right,val);
+		}
+		return node;
+	}
 //data members
 private:
 	Node* root;	
