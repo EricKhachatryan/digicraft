@@ -9,7 +9,7 @@ void swap(int& a,int& b){
 
 void selection( std::vector<int>& arr ) {
 	int size = arr.size();
-	for( int i = 0; i < size; ++i ) { 
+	for( int i = 0; i < size ; ++i ) { 
 		int min = i;
 		for( int j = i + 1; j < size; ++j ) {
 			if( arr[min] > arr[j] ) {
