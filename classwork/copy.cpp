@@ -52,9 +52,8 @@ public:
 	bool operator!= (const MyInt& other){
 	bool bo = false;
 		if( val != other.val){
-			return bo;
-		}else
 			bo = true;	
+		}
 			return bo;
 	}
 
@@ -68,7 +67,7 @@ public:
 
 
 
-private:
+public:
 	int val;
 
 
