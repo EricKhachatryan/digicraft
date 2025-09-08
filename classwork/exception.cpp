@@ -9,7 +9,7 @@ return a/b;
 }
 int main(){
 	int a = 10;
-	int b = 0;
+	int b = 2;
 	try{
 		std::cout << devaid(a,b) << std::endl;	
 	}catch( const char* msg){
