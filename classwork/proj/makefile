@@ -5,7 +5,7 @@ SRC_DIR = src
 BUILD_DIR = build
 LIB_DIR = libs
 
-LIB_NAME = libmath.a
+LIB_NAME = libsqlutils.a
 TARGET = app
 
 SRCS = $(wildcard $(SRC_DIR)/*.cpp)
