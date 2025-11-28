@@ -1,0 +1,12 @@
+{
+  "server": {
+    "port": 12345,
+    "host": "0.0.0.0",
+    "backlog": 10,
+    "database_path": "messenger.db"
+  },
+  "client": {
+    "default_server_ip": "127.0.0.1",
+    "default_port": 12345
+  }
+}
